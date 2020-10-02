@@ -9,7 +9,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.post("/convert", async (req, res) => {
-  const { path } = req.body;
+  // console.log(req.body);
+  const path = req.body.path;
+  // console.log(path);
 
   if (!path) res.json("Invalid Url");
 
@@ -24,4 +26,4 @@ app.post("/convert", async (req, res) => {
     });
 });
 
-app.listen(PORT || 3000, () => console.log("Server Started at ", PORT || 3000));
+app.listen(PORT || 8000, () => console.log("Server Started at ", PORT || 8000));
