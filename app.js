@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const crawler = require("crawler-request");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 app.post("/convert", async (req, res) => {
   const { path } = req.body;
